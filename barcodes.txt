@@ -1,0 +1,12 @@
+AACCA	barcd_02
+CGATC	barcd_03
+TCGAT	barcd_04
+TGCAT	barcd_05
+CAACC	barcd_06
+AAGGA	barcd_08
+AGCTA	barcd_09
+AATTA	barcd_11
+ACTTC	barcd_14
+CATAT	barcd_18
+CGAAT	barcd_19
+CGGCT	barcd_20
