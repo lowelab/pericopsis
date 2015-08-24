@@ -1,0 +1,71 @@
+	P1.2 (reversed)	ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+P2.1 (reversed)	AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+	P2.2 (reversed)	TTGTTCTCGCTCTTCCGATC
+	PCR2.L (reversed)	ATCTCGTATGCCGTCTTCTGCTTG
+	PCR2.R (reversed)	GCACACGTCTGAACTCCAGTCAC
+	PCR1 (reversed)	CGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT
+	P1.2	AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+P2.1	GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+	P2.2	GATCGGAAGAGCGAGAACAA
+	PCR2.L	AAGCAGAAGACGGCATACGAGAT
+	PCR2.R	GTGACTGGAGTTCAGACGTGTGC
+	PCR1	AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACG
+
+
+
+echo "PCR2.R reverse complement" >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*GCACACGTCTGAACTCCAGTCAC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "PCR2.L reverse complement" >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*ATCTCGTATGCCGTCTTCTGCTTG' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "P2.2 reverse complement" >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*TTGTTCTCGCTCTTCCGATC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "P1.2 reverse complement" >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*ACACTCTTTCCCTACACGACGCTCTTCCGATCT' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "PCR1 reverse complement" >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*CGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "PCR2.R " >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*GTGACTGGAGTTCAGACGTGTGC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "PCR2.L " >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*AAGCAGAAGACGGCATACGAGAT' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "P2.2 " >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*GATCGGAAGAGCGAGAACAA' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "P1.2 " >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+echo "PCR1 " >> adapterCount_Pear_ProcessRadtags_Q20.txt
+grep -Ec '^AATTC.*AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACG' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> adapterCount_Pear_ProcessRadtags_Q20.txt
+
+
+
+failed attempts:
+
+
+grep -E '^AATTC[AGCTN]{30}' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq | grep -Ec 'GCACACGTCTGAACTCCAGTCAC'
+
+grep -Ec 'ATCTCGTATGCCGTCTTCTGCTTG' /mtdata/data/Pear_ProcessRadtags_Q20 | grep -Ec '^AATTC'
+
+grep -Ec 'ATCTCGTATGCCGTCTTCTGCTTG' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> PCR2_L_RC.txt
+grep -Ec 'TTGTTCTCGCTCTTCCGATC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> P2.2_RC.txt
+grep -Ec '^AATTC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq
+grep -Ec '^AATTC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq
+
+
+grep -Ec 'GCACACGTCTGAACTCCAGTCAC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> PCR2_R_RC.txt
+grep -E 'GCACACGTCTGAACTCCAGTCAC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq | wc -l
+grep -E 'GCACACGTCTGAACTCCAGTCAC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq | grep -Ec '^AATTC' >> PCR2_R_RC.txt
+
+
+
+
+grep -Ec 'ATCTCGTATGCCGTCTTCTGCTTG' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> PCR2_L_RC.txt
+grep -Ec 'TTGTTCTCGCTCTTCCGATC' /mtdata/data/Pear_ProcessRadtags_Q20/*.fq >> P2.2_RC.txt
+
+
